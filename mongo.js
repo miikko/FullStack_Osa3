@@ -13,7 +13,7 @@ if (process.argv.length < 3) {
         name: String,
         number: String,
     })
-    const Person = mongoose.model('Person', personSchema)
+    const Person = mongoose.model("Person", personSchema)
 
     if (process.argv.length === 3) {
         Person.find({}).then(result => {
@@ -28,9 +28,9 @@ if (process.argv.length < 3) {
             name: process.argv[3],
             number: process.argv[4],
         })
-        person.save().then(response => {
-            console.log("person saved!");
-            mongoose.connection.close();
+        person.save().then(() => {
+            console.log("person saved!")
+            mongoose.connection.close()
         })
     }
 } else {
